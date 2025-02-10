@@ -39,6 +39,7 @@ header {
 }
 
 .header-links {
+    margin-right: 900px;
     display: flex;
     justify-content: flex-start;
 }
@@ -50,6 +51,7 @@ header {
 }
 
 .cart {
+    margin-left: 500px;
     display: flex;
     justify-content: flex-end;
 }
@@ -58,6 +60,7 @@ header {
     display: flex;
     justify-content: space-around;
     height: 600px;
+    background-color: rgb(255, 255, 60);
 }
 
 .top-container-images {
@@ -67,13 +70,22 @@ header {
 }
 
 .top-container-text {
+    width: 30%;
     display: flex;
-    justify-content: start;
+    justify-content: space-around;
+    flex-direction: column;
     align-items: center;
     font-size: 80px;
+    padding-top: 200px;
+    padding-bottom: 200px;
+}
+
+.small-text {
+    font-size: 40px;
 }
 
 .top-container-img {
+    width: 70%;
     padding: 30px;
     margin-right: 60px;
     height: 500px;
@@ -84,6 +96,8 @@ header {
     display: flex; 
     justify-content: space-around;
     align-items: center;
+    margin-left: 300px;
+    margin-right: 300px;
     height: 400px;
     background-color: white;
 }
