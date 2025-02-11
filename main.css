@@ -9,11 +9,11 @@
 }
 
 footer {
-  background-color: rgb(145, 255, 255);
+  background-color: rgb(0, 0, 0);
   height: 40px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   position: fixed;
   left: 0;
   bottom: 0;
@@ -25,8 +25,9 @@ p {
 }
 
 .footer-link {
-  color: black;
-  margin-left: 20px;
+  color: rgb(255, 255, 255);
+  margin-left: 10px;
+  margin-right: 10px;
   text-decoration: none;
 }
 
@@ -90,14 +91,26 @@ header {
   width: 600px;
 }
 
+.top-container-img:hover {
+  animation-name: pop;
+  animation-duration: 1s;
+  animation-delay: 0ms;
+}
+
 .mid-container {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-left: 300px;
-  margin-right: 300px;
+  padding-left: 300px;
+  padding-right: 300px;
   height: 400px;
-  background-color: white;
+  background-color: rgb(165, 165, 165);
+}
+
+@media (max-width: 800px) {
+  .mid-container {
+    flex-direction: column;
+  }
 }
 
 .mid-container-card {
@@ -106,9 +119,21 @@ header {
   align-items: center;
   width: 150px;
   height: 150px;
-  background-color: rgb(255, 238, 212);
+  background-color: rgb(0, 0, 0);
   border-radius: 5px;
 }
 
+.white {
+  color: white;
+}
+
 .bottom-container {
+  background-color: rgb(255, 255, 60);
+  height: 300px;
+}
+
+@keyframes pop {
+  100% {
+    transform: translateY(-30px);
+  }
 }
