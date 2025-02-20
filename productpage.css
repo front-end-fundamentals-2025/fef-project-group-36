@@ -4,12 +4,6 @@
   box-sizing: border-box;
 }
 
-img {
-  cursor: pointer;
-  width: 90%;
-  padding-top: 20px;
-}
-
 svg {
   cursor: pointer;
 }
@@ -18,7 +12,9 @@ body {
   background-color: rgb(255, 255, 60);
 }
 
-.shop {
+/*card styling*/
+
+.market {
   justify-content: start;
   display: grid;
   grid-template-columns: repeat(4, 223px);
@@ -50,7 +46,12 @@ body {
 
 .buttons {
   display: flex;
-  gap: 10px;
+  gap: 20px;
   font-size: 1.3em;
   padding-top: 20px;
+}
+
+.card-img {
+  padding-top: 20px;
+  justify-content: center;
 }
