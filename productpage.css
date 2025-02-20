@@ -5,37 +5,52 @@
 }
 
 img {
-  border-radius: 10%;
   cursor: pointer;
+  width: 90%;
+  padding-top: 20px;
 }
 
 svg {
   cursor: pointer;
 }
 
+body {
+  background-color: rgb(255, 255, 60);
+}
+
 .shop {
   justify-content: start;
   display: grid;
   grid-template-columns: repeat(4, 223px);
+  gap: 10px;
 }
 
 .cart-item {
   display: flex;
   flex-direction: column;
-  background-color: lightgrey;
   border-radius: 10px;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.cart-item:hover {
+  background-color: rgb(208, 208, 51);
+  transition: all 0.5s ease-in-out;
 }
 
 .details {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   gap: 10px;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  font-size: 1.2em;
 }
 
 .buttons {
   display: flex;
   gap: 10px;
   font-size: 1.3em;
+  padding-top: 20px;
 }
