@@ -133,7 +133,7 @@ header {
     padding-top: 200px;
     padding-bottom: 0px;
   }
-  
+
   .top-container-images {
     justify-content: center;
     padding-top: 20px;
@@ -160,4 +160,20 @@ header {
 .bottom-container {
   background-color: rgb(255, 255, 60);
   height: 300px;
+}
+
+/* product page*/
+
+/*item containers*/
+
+.shop {
+  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(4, 400px);
+}
+
+.cart-item {
+  display: flex;
+  flex-direction: column;
+  background-color: lightblue;
 }

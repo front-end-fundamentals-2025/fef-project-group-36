@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  border-radius: 10%;
+  cursor: pointer;
+}
+
+svg {
+  cursor: pointer;
+}
+
+.shop {
+  justify-content: start;
+  display: grid;
+  grid-template-columns: repeat(4, 223px);
+}
+
+.cart-item {
+  display: flex;
+  flex-direction: column;
+  background-color: lightgrey;
+  border-radius: 10px;
+  justify-content: center;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  font-size: 1.3em;
+}
