@@ -7,6 +7,7 @@ let cartData = [
     price: 34,
     img: "img/redbull.jpg.webp",
     quantity: 1,
+    link: "//details.monster.html",
   },
   {
     id: "2",

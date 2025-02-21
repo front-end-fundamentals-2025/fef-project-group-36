@@ -2,6 +2,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Norwester";
+}
+
+@font-face {
+  font-family: "Norwester";
+  src: url(norwester.ttf);
 }
 
 svg {
@@ -10,6 +16,32 @@ svg {
 
 body {
   background-color: rgb(255, 255, 60);
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: black;
+  height: 50px;
+}
+
+.header-links {
+  margin-right: 500px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.header-link {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+.cart {
+  margin-left: 500px;
+  display: flex;
+  justify-content: flex-end;
 }
 
 /*card styling*/
@@ -54,4 +86,11 @@ body {
 .card-img {
   padding-top: 20px;
   justify-content: center;
+}
+
+@media (max-width: 1000px) {
+  .market {
+    display: grid;
+    grid-template-columns: repeat(1, 446px);
+  }
 }
