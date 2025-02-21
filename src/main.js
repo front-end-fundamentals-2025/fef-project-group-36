@@ -1,44 +1,12 @@
 let market = document.getElementById("market");
 
-let cartData = [
-  {
-    id: "1",
-    title: "nocco",
-    price: 34,
-    img: "img/redbull.jpg.webp",
-    quantity: 1,
-    link: "//details.monster.html",
-  },
-  {
-    id: "2",
-    title: "redbull",
-    price: 55,
-    img: "img/powerking.jpg",
-    quantity: 1,
-  },
-  {
-    id: "3",
-    title: "monster",
-    price: 66,
-    img: "img/nocco_bcaa_caribbean_330ml.jpg.avif",
-    quantity: 1,
-  },
-  {
-    id: "4",
-    title: "Monster Ultra White",
-    price: 1.5,
-    img: "img/nocco_bcaa_caribbean_330ml.jpg.avif",
-    quantity: 1,
-  },
-];
-
 let generateMarket = () => {
   market.innerHTML = cartData
     .map((cartData) => {
       //https://www.youtube.com/watch?v=G3BS3sh3D8Q - used for the .map method
       return `<div id="product-id-${cartData.id}" class="cart-item">
     <div class="card-img">
-      <img width="215" src="${cartData.img}" alt="" />
+      <a href="${cartData.link}"><img width="215" src="${cartData.img}" alt="" /></a>
     </div>
     <div class="details">
       <h4>

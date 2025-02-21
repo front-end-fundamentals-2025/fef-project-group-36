@@ -1,10 +1,11 @@
 let cartData = [
   {
     id: "1",
-    title: "nocco",
+    title: "Monster",
     price: 34,
     img: "img/redbull.jpg.webp",
     quantity: 1,
+    link: "details/monster.html",
   },
   {
     id: "2",
@@ -27,4 +28,4 @@ let cartData = [
     img: "img/nocco_bcaa_caribbean_330ml.jpg.avif",
     quantity: 1,
   },
-]; //FUngerar inte
+];
