@@ -13,7 +13,7 @@ let generateMarket = () => {
         <p>${cartData.title}</p>
         <p class="cart-item-price">€ ${cartData.price}</p>
       </h4>
-      <div class="buttons">
+      <div id="buttons" class="buttons">
         <svg onclick="more"
           xmlns="http://www.w3.org/2000/svg"
           width="32"
@@ -55,3 +55,6 @@ let generateMarket = () => {
 let shoppingCart = [];
 
 generateMarket();
+
+const plusBtn = document.getElementById("buttons");
+console.log(plusBtn);
