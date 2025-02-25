@@ -1,4 +1,4 @@
-let cartData = [
+const cartData = [
   {
     id: "1",
     title: "Monster",

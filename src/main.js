@@ -14,7 +14,7 @@ let generateMarket = () => {
         <p class="cart-item-price">€ ${cartData.price}</p>
       </h4>
       <div id="buttons" class="buttons">
-        <svg onclick="more"
+        <svg onclick="addItem(${cartData.id})"
           xmlns="http://www.w3.org/2000/svg"
           width="32"
           height="32"
@@ -30,7 +30,7 @@ let generateMarket = () => {
           />
         </svg>
         <div class="quantity">0</div>
-        <svg onclick="less"
+        <svg onclick="removeItem(${cartData.id})"
           xmlns="http://www.w3.org/2000/svg"
           width="32"
           height="32"
@@ -53,6 +53,16 @@ let generateMarket = () => {
 };
 
 let shoppingCart = [];
+
+const addItem = (id) => {
+  shoppingCart.push(id);
+  localStorage.setItem("items", JSON.stringify(shoppingCart));
+};
+
+const removeItem = (id) => {
+  shoppingCart.splice(id);
+  localStorage.setItem("items", JSON.stringify(shoppingCart));
+};
 
 generateMarket();
 
