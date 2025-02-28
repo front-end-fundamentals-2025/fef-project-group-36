@@ -60,7 +60,6 @@ const addItem = (id) => {
 };
 
 const removeItem = (id) => {
-  shoppingCart.splice(id);
   localStorage.setItem("items", JSON.stringify(shoppingCart));
 };
 
