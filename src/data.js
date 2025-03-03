@@ -28,4 +28,11 @@ const cartData = [
     img: "../img/nocco_bcaa_caribbean_330ml.jpg.avif",
     quantity: 1,
   },
+  {
+    id: "5",
+    title: "Monster Ultra White",
+    price: 1.5,
+    img: "../img/nocco_bcaa_caribbean_330ml.jpg.avif",
+    quantity: 1,
+  },
 ];
