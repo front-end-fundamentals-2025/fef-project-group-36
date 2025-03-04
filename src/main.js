@@ -57,7 +57,13 @@ let shoppingCart = [];
 const addItem = (id) => {
   let item = shoppingCart.find((product) => product.id === id);
 
-  shoppingCart.push({ id: id, quantity: 1 });
+  if (item) {
+    item.quantity += 1;
+
+  } else  {
+    shoppingCart.push({ id: id, quantity: 1 });
+  };
+
   localStorage.setItem("items", JSON.stringify(shoppingCart));
 };
 
