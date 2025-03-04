@@ -55,7 +55,9 @@ let generateMarket = () => {
 let shoppingCart = [];
 
 const addItem = (id) => {
-  shoppingCart.push(id);
+  let item = shoppingCart.find((product) => product.id === id);
+
+  shoppingCart.push({ id: id, quantity: 1 });
   localStorage.setItem("items", JSON.stringify(shoppingCart));
 };
 
