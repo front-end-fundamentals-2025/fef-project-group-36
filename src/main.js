@@ -2,8 +2,9 @@ let market = document.getElementById("market");
 
 let generateMarket = () => {
   market.innerHTML = cartData
-    .map((cartData) => {
+    .map((cartData, findItem) => {
       //https://www.youtube.com/watch?v=G3BS3sh3D8Q - used for the .map method
+
       return `<div id="product-id-${cartData.id}" class="cart-item">
     <div class="card-img">
       <a href="${cartData.link}"><img width="215" src="${cartData.img}" alt="" /></a>
@@ -29,7 +30,7 @@ let generateMarket = () => {
             d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"
           />
         </svg>
-        <div class="quantity">0</div>
+        <div class="quantity">${findItem}</div>
         <svg onclick="removeItem(${cartData.id})"
           xmlns="http://www.w3.org/2000/svg"
           width="32"
@@ -59,19 +60,29 @@ const addItem = (id) => {
 
   if (item) {
     item.quantity += 1;
-
-  } else  {
+  } else {
     shoppingCart.push({ id: id, quantity: 1 });
-  };
-
+  }
   localStorage.setItem("items", JSON.stringify(shoppingCart));
+
+  let findItem = shoppingCart.find((item) => (item.id = id));
+  console.log(findItem);
+  generateMarket();
 };
 
 const removeItem = (id) => {
+  let item = shoppingCart.find((product) => product.id === id);
+
+  if (item.quantity > 0) {
+    if (item) {
+      item.quantity -= 1;
+    }
+  }
+
   localStorage.setItem("items", JSON.stringify(shoppingCart));
+  generateMarket();
 };
 
 generateMarket();
 
 const plusBtn = document.getElementById("buttons");
-console.log(plusBtn);
