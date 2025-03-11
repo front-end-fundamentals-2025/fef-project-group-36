@@ -3,19 +3,20 @@ let market = document.getElementById("market");
 let generateMarket = () => {
   market.innerHTML = cartData
     .map((product) => {
+      let { id, link, img, title, price, quantity } = product;
       //https://www.youtube.com/watch?v=G3BS3sh3D8Q - used for the .map method
 
-      return `<div id="product-id-${product.id}" class="cart-item">
+      return `<div id="product-id-${id}" class="cart-item">
     <div class="card-img">
-      <a href="${product.link}"><img width="215" src="${product.img}" alt="" /></a>
+      <a href="${link}"><img width="215" src="${img}" alt="" /></a>
     </div>
     <div class="details">
       <h4>
-        <p>${product.title}</p>
-        <p class="cart-item-price">€ ${product.price}</p>
+        <p>${title}</p>
+        <p class="cart-item-price">€ ${price}</p>
       </h4>
       <div id="buttons" class="buttons">
-        <svg onclick="addItem(${product.id})"
+        <svg onclick="addItem(${id})"
           xmlns="http://www.w3.org/2000/svg"
           width="32"
           height="32"
@@ -30,8 +31,8 @@ let generateMarket = () => {
             d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"
           />
         </svg>
-        <div class="quantity">${product.quantity}</div>
-        <svg onclick="removeItem(${product.id})"
+        <div class="quantity">${quantity}</div>
+        <svg onclick="removeItem(${id})"
           xmlns="http://www.w3.org/2000/svg"
           width="32"
           height="32"
@@ -53,36 +54,55 @@ let generateMarket = () => {
     .join("");
 };
 
-let shoppingCart = [];
+//hitta vilket vad id:t på knappen jag tryckte på (addItem)
 
-const addItem = (id) => {
-  let item = shoppingCart.find((product) => product.id === id);
+shoppingCart = [];
+
+function addItem(id) {
+  let item = cartData.find((product) => product.id === id);
 
   if (item) {
     item.quantity += 1;
-  } else {
-    shoppingCart.push({ id: id, quantity: 1 });
   }
-  localStorage.setItem("items", JSON.stringify(shoppingCart));
 
-  let findItem = shoppingCart.find((item) => item.quantity === id);
-  console.log(product);
+  let cartItem = shoppingCart.find((product) => product.id === id);
+
+  if (!cartItem) {
+    shoppingCart.push({ id: id, quantity: item.quantity });
+  } else {
+    cartItem.quantity = item.quantity;
+  }
+
+  localStorage.setItem("shoppingCart", JSON.stringify(shoppingCart));
   generateMarket();
-};
+  console.log(shoppingCart);
+}
 
-const removeItem = (id) => {
-  let item = shoppingCart.find((product) => product.id === id);
+function removeItem(id) {
+  let item = cartData.find((product) => product.id === id);
+  let cartItem = shoppingCart.find((product) => product.id === id);
 
-  if (item.quantity > 0) {
-    if (item) {
-      item.quantity -= 1;
+  if (!item || item.quantity === 0) return;
+  else {
+    item.quantity -= 1;
+  }
+
+  if (cartItem) {
+    if (cartItem.quantity > 1) {
+      cartItem.quantity -= 1;
+    } else {
+      shoppingCart = shoppingCart.filter((product) => product.id !== id);
     }
   }
-
-  localStorage.setItem("items", JSON.stringify(shoppingCart));
+  localStorage.setItem("shoppingCart", JSON.stringify(shoppingCart));
   generateMarket();
-};
+  console.log(shoppingCart);
+}
+
+// updatera cartData objektets quantity som hade det id,t
+
+//pusha in ett nytt object med samma id och samma quantity i en ny array
+
+// spara den nya arrayen i localStorage
 
 generateMarket();
-
-const plusBtn = document.getElementById("buttons");
