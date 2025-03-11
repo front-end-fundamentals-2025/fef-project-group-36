@@ -1,7 +1,9 @@
 let market = document.getElementById("market");
+let shoppingCart = JSON.parse(localStorage.getItem("shoppingCart")) || [];
+let total = 0;
 
 let generateMarket = () => {
-  market.innerHTML = cartData
+  market.innerHTML = shoppingCart
     .map((product) => {
       let { id, link, img, title, price, quantity } = product;
       //https://www.youtube.com/watch?v=G3BS3sh3D8Q - used for the .map method
@@ -56,8 +58,6 @@ let generateMarket = () => {
 
 //hitta vilket vad id:t på knappen jag tryckte på (addItem)
 
-shoppingCart = [];
-
 function addItem(id) {
   let item = cartData.find((product) => product.id === id);
 
@@ -68,21 +68,15 @@ function addItem(id) {
   let cartItem = shoppingCart.find((product) => product.id === id);
 
   if (!cartItem) {
-    shoppingCart.push({
-      id: id,
-      quantity: item.quantity,
-      link: item.link,
-      title: item.title,
-      img: item.img,
-      price: item.price,
-    });
+    shoppingCart.push({ id: id, quantity: item.quantity });
   } else {
     cartItem.quantity = item.quantity;
   }
 
   localStorage.setItem("shoppingCart", JSON.stringify(shoppingCart));
   generateMarket();
-  console.log(shoppingCart);
+  calcTotal();
+  console.log(total);
 }
 
 function removeItem(id) {
@@ -102,8 +96,15 @@ function removeItem(id) {
     }
   }
   localStorage.setItem("shoppingCart", JSON.stringify(shoppingCart));
+  calcTotal();
   generateMarket();
-  console.log(shoppingCart);
+  console.log(total);
+}
+
+function calcTotal(id, item) {
+  let item = cartData.find((product) => product.id === id);
+  total = item.price * item.quantity;
+  console.log(total);
 }
 
 // updatera cartData objektets quantity som hade det id,t
