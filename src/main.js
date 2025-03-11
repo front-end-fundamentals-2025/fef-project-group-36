@@ -65,8 +65,8 @@ const addItem = (id) => {
   }
   localStorage.setItem("items", JSON.stringify(shoppingCart));
 
-  let findItem = shoppingCart.find((item) => (item.id = id));
-  console.log(findItem);
+  let findItem = shoppingCart.find((item) => item.quantity === id);
+  console.log(product);
   generateMarket();
 };
 
