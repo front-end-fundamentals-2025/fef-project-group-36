@@ -2,20 +2,20 @@ let market = document.getElementById("market");
 
 let generateMarket = () => {
   market.innerHTML = cartData
-    .map((cartData, findItem) => {
+    .map((product) => {
       //https://www.youtube.com/watch?v=G3BS3sh3D8Q - used for the .map method
 
-      return `<div id="product-id-${cartData.id}" class="cart-item">
+      return `<div id="product-id-${product.id}" class="cart-item">
     <div class="card-img">
-      <a href="${cartData.link}"><img width="215" src="${cartData.img}" alt="" /></a>
+      <a href="${product.link}"><img width="215" src="${product.img}" alt="" /></a>
     </div>
     <div class="details">
       <h4>
-        <p>${cartData.title}</p>
-        <p class="cart-item-price">€ ${cartData.price}</p>
+        <p>${product.title}</p>
+        <p class="cart-item-price">€ ${product.price}</p>
       </h4>
       <div id="buttons" class="buttons">
-        <svg onclick="addItem(${cartData.id})"
+        <svg onclick="addItem(${product.id})"
           xmlns="http://www.w3.org/2000/svg"
           width="32"
           height="32"
@@ -30,8 +30,8 @@ let generateMarket = () => {
             d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"
           />
         </svg>
-        <div class="quantity">${findItem}</div>
-        <svg onclick="removeItem(${cartData.id})"
+        <div class="quantity">${product.quantity}</div>
+        <svg onclick="removeItem(${product.id})"
           xmlns="http://www.w3.org/2000/svg"
           width="32"
           height="32"
