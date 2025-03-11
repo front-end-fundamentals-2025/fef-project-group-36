@@ -151,9 +151,15 @@ header {
   height: 150px;
   background-color: rgb(0, 0, 0);
   border-radius: 5px;
+  transition: all 0.5s ease-in-out;
 }
 
-.white {
+.mid-container-card:hover {
+  transform: translateY(-30px);
+  transition: all 0.5s ease-in-out;
+}
+
+.white-p {
   color: white;
 }
 
@@ -187,4 +193,13 @@ header {
 
 .detail-page-img {
   margin-left: 50px;
+}
+
+.add-to-cart-btn {
+  width: 100px;
+  height: 20px;
+  margin-top: 20px;
+  background-color: black;
+  color:white;
+  border-radius: 5px;
 }
