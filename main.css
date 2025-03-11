@@ -164,5 +164,27 @@ header {
 
 /*Monster detail page*/
 
+.detail-page-container {
+  display: flex;
+  width: 100%;
+  height: 600px;
+  background-color: grey;
+  justify-content: space-between;
+}
 
+.detail-page-txt-container {
+  display: flex;
+  width: 50%;
+  height: 600px;
+  flex-direction: column;
+  margin-top: 20px;
+}
 
+.detail-page-img-container {
+  display: flex;
+  align-items: center;
+}
+
+.detail-page-img {
+  margin-left: 50px;
+}
