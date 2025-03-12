@@ -108,18 +108,6 @@ function removeItem(id) {
   console.log(shoppingCart);
 }
 
-let addTo = document.getElementById("add-to-cart-btn");
-addTo.addEventListener("click", addToCart);
-function addToCart() {
-  shoppingCart.push({
-    id: 1,
-    title: "Monster",
-    price: 34,
-    img: "../img/redbull.jpg.webp",
-    quantity: 0,
-    link: "../details/monster.html",
-  });
-}
 // updatera cartData objektets quantity som hade det id,t
 
 //pusha in ett nytt object med samma id och samma quantity i en ny array
