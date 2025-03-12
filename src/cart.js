@@ -5,7 +5,7 @@ let superTotal = 0;
 
 let generateMarket = () => {
   if (shoppingCart.length === 0) {
-    market.innerHTML = `<div class="empty"><h1>The cart is empty - add new products.</h1></div>`;
+    market.innerHTML = `<div class="empty"><h1>The cart is empty.</h1></div>`;
   } else {
     market.innerHTML = shoppingCart
       .map((product) => {
@@ -118,10 +118,21 @@ function removeItem(id, total) {
   total = item.price * item.quantity;
   generateMarket();
   calculateTotal();
+
   //console.log(total);
 }
 
-console.log(shoppingCart);
+//Checkout button
+let checkButton = document.getElementById("check-button");
+checkButton.addEventListener("click", checkEmpty);
+function checkEmpty() {
+  shoppingCart = [];
+  localStorage.clear();
+  alert("Thank you for using EnergyNOW!");
+  generateMarket();
+}
+
+console.log(superTotal);
 // updatera cartData objektets quantity som hade det id,t
 
 //pusha in ett nytt object med samma id och samma quantity i en ny array
