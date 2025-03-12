@@ -1,10 +1,10 @@
 let market = document.getElementById("market");
 let shoppingCart = JSON.parse(localStorage.getItem("shoppingCart")) || [];
 let total = 0;
+let superTotal = 0;
 
 let generateMarket = () => {
   if (shoppingCart.length === 0) {
-    console.log("triggered");
     market.innerHTML = `<div class="empty"><h1>The cart is empty - add new products.</h1></div>`;
   } else {
     market.innerHTML = shoppingCart
@@ -59,7 +59,19 @@ let generateMarket = () => {
       })
       .join("");
   }
+  calculateTotal();
 };
+
+//used ChatGPT to calculate the sum of everyproducts total and display it https://chatgpt.com/share/67d184af-a678-8007-ae61-2af60cb2cbaa
+function calculateTotal() {
+  superTotal = shoppingCart.reduce((acc, product) => {
+    return acc + product.price * product.quantity;
+  }, 0);
+
+  document.getElementById(
+    "total-price"
+  ).innerHTML = `Total: €${superTotal.toFixed(2)}`;
+}
 
 //hitta vilket vad id:t på knappen jag tryckte på (addItem)
 
@@ -79,9 +91,10 @@ function addItem(id, total) {
   }
   localStorage.setItem("shoppingCart", JSON.stringify(shoppingCart));
   total = item.price * item.quantity;
+  calculateTotal();
   generateMarket();
 
-  console.log(total);
+  //console.log(total);
 }
 
 function removeItem(id, total) {
@@ -104,7 +117,8 @@ function removeItem(id, total) {
   localStorage.setItem("shoppingCart", JSON.stringify(shoppingCart));
   total = item.price * item.quantity;
   generateMarket();
-  console.log(total);
+  calculateTotal();
+  //console.log(total);
 }
 
 console.log(shoppingCart);
@@ -115,3 +129,4 @@ console.log(shoppingCart);
 // spara den nya arrayen i localStorage
 
 generateMarket();
+calculateTotal();
