@@ -3,12 +3,16 @@ let shoppingCart = JSON.parse(localStorage.getItem("shoppingCart")) || [];
 let total = 0;
 
 let generateMarket = () => {
-  market.innerHTML = shoppingCart
-    .map((product) => {
-      let { id, link, img, title, price, quantity } = product;
-      //https://www.youtube.com/watch?v=G3BS3sh3D8Q - used for the .map method
+  if (shoppingCart.length === 0) {
+    console.log("triggered");
+    market.innerHTML = `<div class="empty"><h1>The cart is empty - add new products.</h1></div>`;
+  } else {
+    market.innerHTML = shoppingCart
+      .map((product) => {
+        let { id, link, img, title, price, quantity } = product;
+        //https://www.youtube.com/watch?v=G3BS3sh3D8Q - used for the .map method
 
-      return `<div id="product-id-${id}" class="cart-item">
+        return `<div id="product-id-${id}" class="cart-item">
     <div class="card-img">
       <a href="${link}"><img width="215" src="${img}" alt="" /></a>
     </div>
@@ -52,8 +56,9 @@ let generateMarket = () => {
       </div>
     </div>
   </div>`;
-    })
-    .join("");
+      })
+      .join("");
+  }
 };
 
 //hitta vilket vad id:t på knappen jag tryckte på (addItem)
