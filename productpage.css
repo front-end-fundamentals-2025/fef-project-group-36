@@ -91,6 +91,6 @@ header {
 @media (max-width: 1000px) {
   .market {
     display: grid;
-    grid-template-columns: repeat(1, 446px);
+    grid-template-columns: repeat(2, 446px);
   }
 }
