@@ -99,7 +99,7 @@ header {
   justify-content: space-around;
   align-items: center;
   height: 400px;
-  background-color: rgb(165, 165, 165);
+  background-color: orange;
 }
 
 @media (max-width: 1000px) {
@@ -200,6 +200,6 @@ header {
   height: 20px;
   margin-top: 20px;
   background-color: black;
-  color:white;
+  color: white;
   border-radius: 5px;
 }

@@ -102,7 +102,7 @@ function removeItem(id, total) {
   console.log(total);
 }
 
-console.log(total);
+console.log(shoppingCart);
 // updatera cartData objektets quantity som hade det id,t
 
 //pusha in ett nytt object med samma id och samma quantity i en ny array
