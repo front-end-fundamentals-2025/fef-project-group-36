@@ -13,10 +13,10 @@ let generateMarket = () => {
       <a href="${link}"><img width="215" src="${img}" alt="" /></a>
     </div>
     <div class="details">
-      <h4>
+      <h3>
         <p>${title}</p>
-        <p class="cart-item-price">€ ${price}</p>
-      </h4>
+        <p class="cart-item-price">€ ${price * quantity}</p>
+      </h3>
       <div id="buttons" class="buttons">
         <svg onclick="addItem(${id})"
           xmlns="http://www.w3.org/2000/svg"
@@ -58,7 +58,7 @@ let generateMarket = () => {
 
 //hitta vilket vad id:t på knappen jag tryckte på (addItem)
 
-function addItem(id) {
+function addItem(id, total) {
   let item = cartData.find((product) => product.id === id);
 
   if (item) {
@@ -72,14 +72,14 @@ function addItem(id) {
   } else {
     cartItem.quantity = item.quantity;
   }
-
   localStorage.setItem("shoppingCart", JSON.stringify(shoppingCart));
+  total = item.price * item.quantity;
   generateMarket();
-  calcTotal();
+
   console.log(total);
 }
 
-function removeItem(id) {
+function removeItem(id, total) {
   let item = cartData.find((product) => product.id === id);
   let cartItem = shoppingCart.find((product) => product.id === id);
 
@@ -95,18 +95,14 @@ function removeItem(id) {
       shoppingCart = shoppingCart.filter((product) => product.id !== id);
     }
   }
+
   localStorage.setItem("shoppingCart", JSON.stringify(shoppingCart));
-  calcTotal();
+  total = item.price * item.quantity;
   generateMarket();
   console.log(total);
 }
 
-function calcTotal(id, item) {
-  let item = cartData.find((product) => product.id === id);
-  total = item.price * item.quantity;
-  console.log(total);
-}
-
+console.log(total);
 // updatera cartData objektets quantity som hade det id,t
 
 //pusha in ett nytt object med samma id och samma quantity i en ny array
