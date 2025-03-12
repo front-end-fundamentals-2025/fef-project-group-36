@@ -1,4 +1,5 @@
 let market = document.getElementById("market");
+let shoppingCart = JSON.parse(localStorage.getItem("shoppingCart")) || [];
 
 let generateMarket = () => {
   market.innerHTML = cartData
@@ -11,9 +12,12 @@ let generateMarket = () => {
       <a href="${link}"><img width="215" src="${img}" alt="" /></a>
     </div>
     <div class="details">
+    <h2>  <p>${title}</p> </h2>
+    <h2>  <p>€ ${price}</p> </h2>
       <h4>
-        <p>${title}</p>
-        <p class="cart-item-price">€ ${price}</p>
+        <p class="cart-item-price"> ${quantity} x € ${price} - € ${
+        price * quantity
+      }</p>
       </h4>
       <div id="buttons" class="buttons">
         <svg onclick="addItem(${id})"
@@ -55,8 +59,6 @@ let generateMarket = () => {
 };
 
 //hitta vilket vad id:t på knappen jag tryckte på (addItem)
-
-shoppingCart = [];
 
 function addItem(id) {
   let item = cartData.find((product) => product.id === id);
@@ -106,6 +108,18 @@ function removeItem(id) {
   console.log(shoppingCart);
 }
 
+let addTo = document.getElementById("add-to-cart-btn");
+addTo.addEventListener("click", addToCart);
+function addToCart() {
+  shoppingCart.push({
+    id: 1,
+    title: "Monster",
+    price: 34,
+    img: "../img/redbull.jpg.webp",
+    quantity: 0,
+    link: "../details/monster.html",
+  });
+}
 // updatera cartData objektets quantity som hade det id,t
 
 //pusha in ett nytt object med samma id och samma quantity i en ny array
