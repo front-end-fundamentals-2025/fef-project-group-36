@@ -249,3 +249,9 @@ header {
 .table-of-content > ul {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
