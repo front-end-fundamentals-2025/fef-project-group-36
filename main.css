@@ -104,6 +104,7 @@ header {
   padding-top: 200px;
   font-size: 35px;
   margin-left: 50px;
+  color: #8b55ff;
 }
 
 .top-container-img {
@@ -217,7 +218,6 @@ header {
   justify-content: space-around;
   align-items: center;
 }
-
 
 /*Detail page styling*/
 
