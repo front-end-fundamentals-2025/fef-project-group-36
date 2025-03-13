@@ -41,11 +41,23 @@ header {
   height: 50px;
 }
 
+@keyframes fly-in {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
 .logo {
   width: 1280px;
   margin: 0;
   padding-left: 75px;
   padding-top: 20px;
+  z-index: -1;
+  position: relative;
+  animation: fly-in 0.5s ease-out;
 }
 
 .header-links {
