@@ -13,6 +13,7 @@ let cartData = [
     price: 29.99,
     img: "../img/noccoBlueRas.webp",
     quantity: 0,
+    link: "../details/detailsID2.html"
   },
   {
     id: 3,
