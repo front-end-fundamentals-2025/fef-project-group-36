@@ -1,5 +1,6 @@
 let market = document.getElementById("market");
 let shoppingCart = JSON.parse(localStorage.getItem("shoppingCart")) || [];
+
 let total = 0;
 let superTotal = 0;
 
@@ -73,10 +74,8 @@ function calculateTotal() {
   ).innerHTML = `Total: €${superTotal.toFixed(2)}`;
 }
 
-//hitta vilket vad id:t på knappen jag tryckte på (addItem)
-
 function addItem(id, total) {
-  let item = cartData.find((product) => product.id === id);
+  let item = shoppingCart.find((product) => product.id === id);
 
   if (item) {
     item.quantity += 1;
@@ -98,13 +97,8 @@ function addItem(id, total) {
 }
 
 function removeItem(id, total) {
-  let item = cartData.find((product) => product.id === id);
+  let item = shoppingCart.find((product) => product.id === id);
   let cartItem = shoppingCart.find((product) => product.id === id);
-
-  if (!item || item.quantity === 0) return;
-  else {
-    item.quantity -= 1;
-  }
 
   if (cartItem) {
     if (cartItem.quantity > 1) {
@@ -131,13 +125,6 @@ function checkEmpty() {
   alert("Thank you for using EnergyNOW!");
   generateMarket();
 }
-
-console.log(superTotal);
-// updatera cartData objektets quantity som hade det id,t
-
-//pusha in ett nytt object med samma id och samma quantity i en ny array
-
-// spara den nya arrayen i localStorage
 
 generateMarket();
 calculateTotal();
