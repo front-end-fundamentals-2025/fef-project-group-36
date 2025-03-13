@@ -13,7 +13,8 @@ let generateMarket = () => {
       .map((product) => {
         let { id, link, img, title, price, quantity } = product;
         //https://www.youtube.com/watch?v=G3BS3sh3D8Q - used for the .map method
-
+        let floorP = Math.floor(price);
+        let floorQ = Math.floor(quantity);
         return `<div id="product-id-${id}" class="cart-item">
     <div class="card-img">
       <a href="${link}"><img width="215" src="${img}" alt="" /></a>
@@ -21,7 +22,7 @@ let generateMarket = () => {
     <div class="details">
       <h3>
         <p>${title}</p>
-        <p class="cart-item-price">€ ${price * quantity}</p>
+        <p class="cart-item-price">€ ${floorP * floorQ}</p>
       </h3>
       <div id="buttons" class="buttons">
         <svg onclick="addItem(${id})" 
