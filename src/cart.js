@@ -6,6 +6,7 @@ let superTotal = 0;
 
 let generateMarket = () => {
   if (shoppingCart.length === 0) {
+    //checks if the cart is empty, if it is we place text otherwise we run the same code as main.js but we take it from the shoppingcart instead of cartData
     market.innerHTML = `<div class="empty"><h1>The cart is empty.</h1></div>`;
   } else {
     market.innerHTML = shoppingCart
@@ -74,7 +75,8 @@ function calculateTotal() {
   ).innerHTML = `Total: €${superTotal.toFixed(2)}`;
 }
 
-function addItem(id, total) {
+function addItem(id) {
+  // does the same thing as main.js but only takes data from the shoppingcart
   let item = shoppingCart.find((product) => product.id === id);
 
   if (item) {
@@ -89,15 +91,14 @@ function addItem(id, total) {
     cartItem.quantity = item.quantity;
   }
   localStorage.setItem("shoppingCart", JSON.stringify(shoppingCart));
-  total = item.price * item.quantity;
   calculateTotal();
   generateMarket();
 
   //console.log(total);
 }
 
-function removeItem(id, total) {
-  let item = shoppingCart.find((product) => product.id === id);
+function removeItem(id) {
+  //same with this one
   let cartItem = shoppingCart.find((product) => product.id === id);
 
   if (cartItem) {
@@ -109,7 +110,6 @@ function removeItem(id, total) {
   }
 
   localStorage.setItem("shoppingCart", JSON.stringify(shoppingCart));
-  total = item.price * item.quantity;
   generateMarket();
   calculateTotal();
 
@@ -120,9 +120,9 @@ function removeItem(id, total) {
 let checkButton = document.getElementById("check-button");
 checkButton.addEventListener("click", checkEmpty);
 function checkEmpty() {
-  shoppingCart = [];
-  localStorage.clear();
-  alert("Thank you for using EnergyNOW!");
+  shoppingCart = []; //resets the shopping cart
+  localStorage.clear(); //and clears local storage
+  alert("Thank you for using EnergyNOW!"); //make a popup to signify the user
   generateMarket();
 }
 

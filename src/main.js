@@ -1,7 +1,8 @@
 let market = document.getElementById("market");
-let shoppingCart = JSON.parse(localStorage.getItem("shoppingCart")) || [];
+let shoppingCart = JSON.parse(localStorage.getItem("shoppingCart")) || []; // gets the shoppingcart from localstorage if it doesn't exists it makes it empty
 
 let generateMarket = () => {
+  //takes each object in cartData (array) and applies this code for each item.
   market.innerHTML = cartData
     .map((product) => {
       let { id, link, img, title, price, quantity } = product;
@@ -55,21 +56,23 @@ let generateMarket = () => {
     </div>
   </div>`;
     })
-    .join("");
+    .join(""); // the map will by default retrun values like this "blablabla, blablabla, blablabla" but join removes the ","
 };
 
 //hitta vilket vad id:t på knappen jag tryckte på (addItem)
 
 function addItem(id) {
-  let item = cartData.find((product) => product.id === id);
+  let item = cartData.find((product) => product.id === id); //this searches the cartData and checks the which product has been clicked and stores it in item
 
   if (item) {
+    //if the item already exists in cart data (which it always does) we update the quantity
     item.quantity += 1;
   }
 
-  let cartItem = shoppingCart.find((product) => product.id === id);
+  let cartItem = shoppingCart.find((product) => product.id === id); //here we do almost the same thing but we use the shoppingcart instead of cartdata.
 
   if (!cartItem) {
+    //we check if the product exist or not in the shopping cart, if it does we make the quantity be the item quantity if it doesn't we push a new object with the right id
     shoppingCart.push({
       id: id,
       quantity: item.quantity,
@@ -82,21 +85,22 @@ function addItem(id) {
     cartItem.quantity = item.quantity;
   }
 
-  localStorage.setItem("shoppingCart", JSON.stringify(shoppingCart));
-  generateMarket();
-  console.log(shoppingCart);
+  localStorage.setItem("shoppingCart", JSON.stringify(shoppingCart)); //stores the shopping cart in local storage
+  generateMarket(); //update the market
 }
 
 function removeItem(id) {
-  let item = cartData.find((product) => product.id === id);
+  let item = cartData.find((product) => product.id === id); //does the same thing as adding items
   let cartItem = shoppingCart.find((product) => product.id === id);
 
-  if (!item || item.quantity === 0) return;
+  if (item.quantity === 0)
+    return; //if an item does not exist or is the quantity is 0 we do nothing
   else {
-    item.quantity -= 1;
+    item.quantity -= 1; //if the items quantity is over 0 we remove the quantity, but we dont remove the entire object since it won't displayed on the product page
   }
 
   if (cartItem) {
+    //does the same thing but
     if (cartItem.quantity > 1) {
       cartItem.quantity -= 1;
     } else {
