@@ -22,6 +22,10 @@ p {
   color: black;
 }
 
+body {
+  background-color: rgb(255, 255, 60);
+}
+
 .footer-link {
   color: rgb(255, 255, 255);
   margin-left: 10px;
@@ -35,6 +39,13 @@ header {
   justify-content: space-around;
   background-color: black;
   height: 50px;
+}
+
+.logo {
+  width: 1280px;
+  margin: 0;
+  padding-left: 75px;
+  padding-top: 20px;
 }
 
 .header-links {
@@ -59,7 +70,7 @@ header {
   width: 100%;
   display: flex;
   justify-content: space-around;
-  height: 600px;
+  height: 400px;
   background-color: rgb(255, 255, 60);
 }
 
@@ -117,6 +128,10 @@ header {
 
   .mid-container {
     height: 1500px;
+  }
+
+  .logo {
+    width: 70%;
   }
 
   .mid-container-card {
