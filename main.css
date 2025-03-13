@@ -15,7 +15,6 @@ footer {
   align-items: center;
   justify-content: space-around;
   bottom: 0;
-  width: 100%;
 }
 
 p {
@@ -35,8 +34,8 @@ body {
 
 header {
   display: flex;
-  align-items: center;
   justify-content: space-around;
+  align-items: center;
   background-color: black;
   height: 50px;
 }
@@ -51,9 +50,8 @@ header {
 }
 
 .logo {
-  width: 1280px;
+  width: 100%;
   margin: 0;
-  padding-left: 75px;
   padding-top: 20px;
   z-index: -1;
   position: relative;
@@ -73,13 +71,10 @@ header {
 }
 
 .cart {
-  margin-left: 500px;
   display: flex;
-  justify-content: flex-end;
 }
 
 .top-container {
-  width: 100%;
   display: flex;
   justify-content: space-around;
   height: 400px;
@@ -103,7 +98,7 @@ header {
   padding-bottom: 200px;
   padding-top: 200px;
   font-size: 35px;
-  margin-left: 50px;
+  margin-left: px;
 }
 
 .top-container-img {
@@ -125,22 +120,19 @@ header {
   background-color: rgb(114, 51, 250);
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1360px) {
   .mid-container {
     flex-direction: column;
-    width: 1000px;
   }
   .top-container {
     flex-direction: column;
     height: 2000px;
-    width: 1000px;
     align-items: center;
     justify-content: space-around;
   }
 
   .mid-container {
     height: 1700px;
-    width: 100%;
   }
 
   .logo {
