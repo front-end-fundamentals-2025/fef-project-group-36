@@ -59,8 +59,6 @@ let generateMarket = () => {
     .join(""); // the map will by default retrun values like this "blablabla, blablabla, blablabla" but join removes the ","
 };
 
-//hitta vilket vad id:t på knappen jag tryckte på (addItem)
-
 function addItem(id) {
   let item = cartData.find((product) => product.id === id); //this searches the cartData and checks the which product has been clicked and stores it in item
 
@@ -100,22 +98,16 @@ function removeItem(id) {
   }
 
   if (cartItem) {
-    //does the same thing but
+    //does the same thing but the only difference is that we remove the object in the shopping cart if it is less than 1.
     if (cartItem.quantity > 1) {
       cartItem.quantity -= 1;
     } else {
-      shoppingCart = shoppingCart.filter((product) => product.id !== id);
+      shoppingCart = shoppingCart.filter((product) => product.id !== id); //removes the right product by removing products that has no corresponding id
     }
   }
   localStorage.setItem("shoppingCart", JSON.stringify(shoppingCart));
   generateMarket();
   console.log(shoppingCart);
 }
-
-// updatera cartData objektets quantity som hade det id,t
-
-//pusha in ett nytt object med samma id och samma quantity i en ny array
-
-// spara den nya arrayen i localStorage
 
 generateMarket();

@@ -24,7 +24,7 @@ let generateMarket = () => {
         <p class="cart-item-price">€ ${price * quantity}</p>
       </h3>
       <div id="buttons" class="buttons">
-        <svg onclick="addItem(${id})"
+        <svg onclick="addItem(${id})" 
           xmlns="http://www.w3.org/2000/svg"
           width="32"
           height="32"
@@ -119,10 +119,11 @@ function removeItem(id) {
 //Checkout button
 let checkButton = document.getElementById("check-button");
 checkButton.addEventListener("click", checkEmpty);
+
 function checkEmpty() {
   shoppingCart = []; //resets the shopping cart
   localStorage.clear(); //and clears local storage
-  alert("Thank you for using EnergyNOW!"); //make a popup to signify the user
+  alert("Thank you for using EnergyNOW!"); //make a popup to signify the user (do we want something else to be displayed when user orders?)
   generateMarket();
 }
 
