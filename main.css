@@ -147,11 +147,15 @@ header {
   align-items: center;
   padding-left: 10px;
   padding-right: 10px;
-  width: 150px;
-  height: 150px;
+  width: 250px;
+  height: 250px;
   background-color: rgb(0, 0, 0);
   border-radius: 5px;
   transition: all 0.5s ease-in-out;
+}
+
+.img-mid {
+  width: 70%;
 }
 
 .mid-container-card:hover {
@@ -192,13 +196,12 @@ header {
 }
 
 .table-of-content > p {
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .table-of-content > ul {
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-
 
 /* .detail-page-container {
   display: flex;
