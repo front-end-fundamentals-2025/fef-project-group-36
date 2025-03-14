@@ -92,6 +92,7 @@ function addItem(id) {
   localStorage.setItem("shoppingCart", JSON.stringify(shoppingCart));
   calculateTotal();
   generateMarket();
+  console.log(shoppingCart);
 
   //console.log(total);
 }
