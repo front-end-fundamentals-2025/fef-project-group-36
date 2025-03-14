@@ -3,7 +3,7 @@ let cartData = [
     id: 1,
     title: "Nocco Ice Soda",
     price: 29.99,
-    img: "/img/noccoIceSoda.webp",
+    img: "../img/noccoIceSoda.webp",
     quantity: 0,
     link: "../details/detailsID1.html",
   },
@@ -11,15 +11,15 @@ let cartData = [
     id: 2,
     title: "Nocco Blue Raspberry",
     price: 29.99,
-    img: "/img/noccoBlueRas.webp",
+    img: "../img/noccoBlueRas.webp",
     quantity: 0,
-    link: "../details/detailsID2.html",
+    link: "../details/detailsID2.html"
   },
   {
     id: 3,
     title: "Nocco Limon",
     price: 29.99,
-    img: "/img/noccoLimon.webp",
+    img: "../img/noccoLimon.webp",
     quantity: 0,
   },
   {
