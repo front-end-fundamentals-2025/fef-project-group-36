@@ -16,9 +16,9 @@ let generateMarket = () => {
     <h2>  <p>${title}</p> </h2>
     <h2>  <p>€ ${price}</p> </h2>
       <h4>
-        <p class="cart-item-price"> ${quantity} x € ${price} - € ${
-          totalPrice.toFixed(2)
-      }</p>
+        <p class="cart-item-price"> ${quantity} x € ${price} - € ${totalPrice.toFixed(
+        2
+      )}</p>
       </h4>
       <div id="buttons" class="buttons">
         <svg onclick="addItem(${id})"
@@ -107,7 +107,6 @@ function removeItem(id) {
   }
   localStorage.setItem("shoppingCart", JSON.stringify(shoppingCart));
   generateMarket();
-  console.log(shoppingCart);
 }
 
 generateMarket();

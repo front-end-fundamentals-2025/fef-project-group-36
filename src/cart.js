@@ -1,7 +1,6 @@
 let market = document.getElementById("market");
 let shoppingCart = JSON.parse(localStorage.getItem("shoppingCart")) || [];
 
-let total = 0;
 let superTotal = 0;
 
 let generateMarket = () => {
