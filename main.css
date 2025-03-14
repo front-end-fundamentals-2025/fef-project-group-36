@@ -167,8 +167,8 @@ header {
   align-items: center;
   padding-left: 10px;
   padding-right: 10px;
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   background-color: rgb(0, 0, 0);
   border-radius: 5px;
   transition: all 0.5s ease-in-out;
@@ -184,6 +184,10 @@ header {
 }
 
 .img-mid {
+  width: 100%;
+}
+
+.mid-container-car > a {
   width: 70%;
 }
 

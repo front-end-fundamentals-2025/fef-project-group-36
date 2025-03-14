@@ -123,7 +123,7 @@ checkButton.addEventListener("click", checkEmpty);
 function checkEmpty() {
   shoppingCart = []; //resets the shopping cart
   localStorage.clear(); //and clears local storage
-  alert("Thank you for using EnergyNOW!"); //make a popup to signify the user (do we want something else to be displayed when user orders?)
+  alert("Thank you for using EnergyNOW, your order was succesful!"); //make a popup to signify the user (do we want something else to be displayed when user orders?)
   generateMarket();
 }
 
