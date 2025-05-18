@@ -223,6 +223,19 @@ header {
   background-color: rgb(237, 238, 240);
 }
 
+@media (max-width: 1360px) {
+  .detail-page-container {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 50px;
+  }
+
+  .detail-page-text > h3 {
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+}
+
 .detail-page-image > img {
   object-fit: cover;
   width: 100%;
