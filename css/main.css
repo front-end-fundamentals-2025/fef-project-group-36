@@ -37,11 +37,13 @@ body {
 }
 
 header {
+  background-color: rgb(0, 0, 0);
+  height: 80px;
   display: flex;
-  justify-content: space-around;
   align-items: center;
-  background-color: black;
-  height: 50px;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 @keyframes fly-in {
@@ -60,12 +62,6 @@ header {
   z-index: -1;
   position: relative;
   animation: fly-in 0.5s ease-out;
-}
-
-.header-links {
-  margin-right: 500px;
-  display: flex;
-  justify-content: flex-start;
 }
 
 .header-link {
@@ -241,25 +237,30 @@ header {
 }
 
 .detail-page-image > img {
-  object-fit: cover;
   width: 100%;
-  max-height: 100%;
+  margin: 0;
+  padding-top: 20px;
 }
 
 .detail-page-text {
+  margin-left: 10px;
   margin-top: 10px;
 }
 
 .table-of-content {
   margin-top: 10px;
+  margin-left: 10px;
+
 }
 
 .table-of-content > p {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin-left: 10px;
 }
 
 .table-of-content > ul {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin-left: 10px;
 }
 
 .form {
