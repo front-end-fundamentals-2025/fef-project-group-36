@@ -1,6 +1,8 @@
 * {
   margin: 0;
   font-family: "Norwester";
+  box-sizing: border-box;
+  text-decoration: none;
 }
 
 @font-face {
@@ -22,6 +24,8 @@ p {
 }
 
 body {
+  position: relative;
+  overflow-x: hidden;
   background-color: rgb(255, 255, 60);
 }
 
