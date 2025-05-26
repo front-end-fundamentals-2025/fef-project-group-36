@@ -17,6 +17,9 @@ footer {
   align-items: center;
   justify-content: space-around;
   bottom: 0;
+  flex-wrap: wrap;
+  text-align: center;
+  padding: 10px;
 }
 
 p {
@@ -44,6 +47,11 @@ header {
   justify-content: space-between;
   padding-left: 20px;
   padding-right: 20px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 @keyframes fly-in {
@@ -218,28 +226,20 @@ header {
 
 .detail-page-container {
   display: grid;
-  grid-template-columns: repeat(3, 50vh);
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   background-color: rgb(237, 238, 240);
 }
 
-@media (max-width: 1360px) {
+@media (max-width: 900px) {
   .detail-page-container {
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 50px;
+    grid-template-columns: 1fr;
   }
 
   .detail-page-text > h3 {
     padding-bottom: 10px;
     padding-top: 10px;
   }
-}
-
-.detail-page-image > img {
-  width: 100%;
-  margin: 0;
-  padding-top: 20px;
 }
 
 .detail-page-text {
@@ -250,7 +250,6 @@ header {
 .table-of-content {
   margin-top: 10px;
   margin-left: 10px;
-
 }
 
 .table-of-content > p {
