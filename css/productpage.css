@@ -62,9 +62,17 @@ body {
   justify-content: center;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
   .market {
     display: grid;
     grid-template-columns: repeat(2, 446px);
+  }
+}
+
+@media (max-width: 895px) {
+  .market {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 }
