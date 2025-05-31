@@ -1,3 +1,8 @@
+:root {
+  --primary: rgb(255, 255, 60);
+  --secondary: rgb(114, 51, 250);
+}
+
 * {
   margin: 0;
   font-family: "Norwester";
@@ -29,7 +34,7 @@ p {
 body {
   position: relative;
   overflow-x: hidden;
-  background-color: rgb(255, 255, 60);
+  background-color: var(--primary);
 }
 
 .footer-link {
@@ -86,7 +91,7 @@ img {
   display: flex;
   justify-content: space-around;
   height: 25rem;
-  background-color: rgb(255, 255, 60);
+  background-color: var(--primary);
 }
 
 .top-container-images {
@@ -103,20 +108,20 @@ img {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding-bottom: 12.5rem;
-  padding-top: 12.5rem;
-  font-size: 2.1875rem;
-  color: #8b55ff;
+  padding-bottom: 12rem;
+  padding-top: 12rem;
+  font-size: 2rem;
+  color: var(--secondary);
 }
 
 .top-container-img {
-  height: 15.625rem;
-  width: 31.25rem;
+  height: 15rem;
+  width: 31rem;
   transition: all 0.5s ease-in-out;
 }
 
 .top-container-img:hover {
-  transform: translateY(-3.125rem);
+  transform: translateY(-3rem);
   transition: all 0.5s ease-in-out;
 }
 
@@ -125,7 +130,7 @@ img {
   justify-content: space-around;
   align-items: center;
   height: 25rem;
-  background-color: rgb(114, 51, 250);
+  background-color: var(--secondary);
 }
 
 @media (max-width: 1360px) {
@@ -199,7 +204,7 @@ img {
   align-items: center;
   font-size: larger;
   padding: 0.5rem;
-  background-color: rgb(89, 40, 194);
+  background-color: var(--secondary);
 }
 
 .img-mid {
@@ -220,7 +225,7 @@ img {
 }
 
 .bottom-container {
-  background-color: rgb(255, 255, 60);
+  background-color: var(--primary);
   height: 19rem;
   display: flex;
   justify-content: space-around;
