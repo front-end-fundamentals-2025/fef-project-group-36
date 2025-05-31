@@ -1,3 +1,8 @@
+:root {
+  --primary: rgb(255, 255, 60);
+  --secondary: rgb(114, 51, 250);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -15,7 +20,7 @@ svg {
 }
 
 body {
-  background-color: rgb(255, 255, 60);
+  background-color: var(--primary);
 }
 
 /*card styling*/
@@ -23,48 +28,60 @@ body {
 .market {
   justify-content: start;
   display: grid;
-  grid-template-columns: repeat(4, 223px);
-  gap: 10px;
+  grid-template-columns: repeat(4, 14rem);
+  gap: 0.5rem;
 }
 
 .cart-item {
   display: flex;
   flex-direction: column;
-  border-radius: 10px;
+  border-radius: 0.5rem;
   justify-content: space-around;
   align-items: center;
 }
 
 .cart-item:hover {
-  background-color: rgb(208, 208, 51);
+  background-color: var(--primary);
   transition: all 0.5s ease-in-out;
 }
 
 .details {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 0.5rem;
   align-items: center;
   text-align: center;
-  padding: 20px;
-  font-size: 1.2em;
+  padding: 1.5rem;
+  font-size: 1rem;
 }
 
 .buttons {
   display: flex;
-  gap: 20px;
-  font-size: 1.3em;
-  padding-top: 20px;
+  gap: 1.5rem;
+  font-size: 1rem;
+  padding-top: 1.5rem;
 }
 
 .card-img {
-  padding-top: 20px;
+  padding-top: 1.5rem;
   justify-content: center;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
   .market {
     display: grid;
-    grid-template-columns: repeat(2, 446px);
+    grid-template-columns: repeat(2, 28rem);
+  }
+}
+
+@media (max-width: 895px) {
+  .market {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .buttons {
+    font-size: 2rem;
   }
 }
