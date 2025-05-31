@@ -10,7 +10,7 @@ let generateMarket = () => {
       const totalPrice = price * quantity;
       return `<div id="product-id-${id}" class="cart-item">
     <div class="card-img">
-      <a href="${link}"><img width="215" src="${img}" alt="" /></a>
+      <a href="${link}"><img width="215" src="${img}" alt="${title}" /></a>
     </div>
     <div class="details">
     <h2>  <p>${title}</p> </h2>
