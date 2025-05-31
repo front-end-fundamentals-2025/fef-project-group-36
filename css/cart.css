@@ -1,54 +1,3 @@
-:root {
-  --primary: rgb(255, 255, 60);
-  --secondary: rgb(114, 51, 250);
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Norwester";
-}
-
-@font-face {
-  font-family: "Norwester";
-  src: url(norwester.ttf);
-}
-
-svg {
-  cursor: pointer;
-}
-
-body {
-  background-color: var(--primary);
-}
-
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  background-color: black;
-  height: 3rem;
-}
-
-.header-links {
-  margin-right: 31rem;
-  display: flex;
-  justify-content: flex-start;
-}
-
-.header-link {
-  color: white;
-  margin-left: 1.5rem;
-  text-decoration: none;
-}
-
-.cart {
-  margin-left: 31rem;
-  display: flex;
-  justify-content: flex-end;
-}
-
 /*card styling*/
 
 .container {
@@ -59,7 +8,7 @@ header {
 .checkout {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: flex-start;
   background-color: var(--secondary);
   padding: 5rem;
   font-size: 2rem;

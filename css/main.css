@@ -54,6 +54,10 @@ header {
   padding-right: 1.25rem;
 }
 
+svg {
+  cursor: pointer;
+}
+
 img {
   max-width: 100%;
   height: auto;

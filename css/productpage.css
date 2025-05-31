@@ -1,28 +1,3 @@
-:root {
-  --primary: rgb(255, 255, 60);
-  --secondary: rgb(114, 51, 250);
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Norwester";
-}
-
-@font-face {
-  font-family: "Norwester";
-  src: url(norwester.ttf);
-}
-
-svg {
-  cursor: pointer;
-}
-
-body {
-  background-color: var(--primary);
-}
-
 /*card styling*/
 
 .market {
